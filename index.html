@@ -13,9 +13,26 @@
     
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="alfa-logo.png">
+
+    <style>
+        a.btn {
+            text-decoration: none; /* Remove sublinhado de link */
+            display: inline-flex;  /* Garante comportamento de caixa flexível */
+            align-items: center;   /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            cursor: pointer;
+        }
+        /* Garante que o link do telefone no rodapé não fique azul/roxo padrão */
+        .footer-contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="container nav">
             <div class="logo-container">
@@ -30,11 +47,10 @@
                 <a href="#contato" class="nav-link">Contato</a>
             </div>
 
-            <button class="btn btn-primary">Fale Conosco</button>
+            <a href="https://wa.me/5555997130117" target="_blank" class="btn btn-primary">Fale Conosco</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
@@ -53,12 +69,12 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <button class="btn btn-primary btn-lg">
+                    <a href="https://wa.me/5555997130117" target="_blank" class="btn btn-primary btn-lg">
                         Comece Agora
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
-                    </button>
+                    </a>
                     <button class="btn btn-outline btn-lg">Saiba Mais</button>
                 </div>
             </div>
@@ -66,7 +82,6 @@
         <div class="hero-gradient"></div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
@@ -105,7 +120,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="sobre" class="about">
         <div class="container">
             <div class="section-header">
@@ -164,7 +178,6 @@
         </div>
     </section>
 
-    <!-- Solutions Section -->
     <section id="solucoes" class="solutions">
         <div class="container">
             <div class="section-header">
@@ -262,7 +275,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contato" class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -299,7 +311,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
-                            (55) 9971-30117
+                            <a href="https://wa.me/5555997130117" target="_blank">(55) 9971-30117</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
