@@ -1,5 +1,5 @@
 {
-    "name": "Alfa AI Receptionist",
+    "name": "Alfa AI Receptionist (Gemini)",
     "nodes": [
         {
             "parameters": {
@@ -19,32 +19,30 @@
         },
         {
             "parameters": {
-                "model": "gpt-4o",
-                "messages": [
-                    {
-                        "role": "system",
-                        "content": "Você é a Alfa IA, a assistente virtual da Alfa Empreendimentos Digitais. Sua missão é agir como uma consultora de crescimento sênior.\n\n**Sobre a Alfa:**\nSomos uma agência de Automação e IA focada em ROI (Retorno sobre Investimento). Não vendemos apenas sites ou chatbots; vendemos máquinas de vendas e eficiência operacional.\n\n**O que oferecemos:**\n1.  **SDR AI (Vendas):** Agentes que prospectam e qualificam leads 24/7.\n2.  **Enriquecimento de Dados:** Buscamos dados externos para criar abordagens hiper-personalizadas.\n3.  **Automação de Ops:** Conectamos CRM, Financeiro e Marketing para eliminar trabalho manual.\n\n**Seu Tom de Voz:**\nProfissional, direto, autoridade no assunto, mas acessível. Use emojis com moderação. Foque sempre no benefício financeiro (economia de tempo, aumento de receita).\n\n**Interação:**\nO usuário enviará uma mensagem. Responda de forma concisa (máximo 3 parágrafos). Sempre tente direcionar para o agendamento de uma consultoria gratuita se o lead parecer qualificado.\n\n**Link de Agendamento:** https://wa.me/5555997130117"
-                    },
-                    {
-                        "role": "user",
-                        "content": "={{ $json.message }}"
-                    }
-                ],
-                "options": {}
+                "modelId": "gemini-pro",
+                "options": {
+                    "systemInstruction": "Você é a Alfa IA, a assistente virtual da Alfa Empreendimentos Digitais. Sua missão é agir como uma consultora de crescimento sênior.\n\n**Sobre a Alfa:**\nSomos uma agência de Automação e IA focada em ROI (Retorno sobre Investimento). Não vendemos apenas sites ou chatbots; vendemos máquinas de vendas e eficiência operacional.\n\n**O que oferecemos:**\n1.  **SDR AI (Vendas):** Agentes que prospectam e qualificam leads 24/7.\n2.  **Enriquecimento de Dados:** Buscamos dados externos para criar abordagens hiper-personalizadas.\n3.  **Automação de Ops:** Conectamos CRM, Financeiro e Marketing para eliminar trabalho manual.\n\n**Seu Tom de Voz:**\nProfissional, direto, autoridade no assunto, mas acessível. Use emojis com moderação. Foque sempre no benefício financeiro (economia de tempo, aumento de receita).\n\n**Interação:**\nO usuário enviará uma mensagem. Responda de forma concisa (máximo 3 parágrafos). Sempre tente direcionar para o agendamento de uma consultoria gratuita se o lead parecer qualificado.\n\n**Link de Agendamento:** https://wa.me/5555997130117"
+                }
             },
-            "type": "@n8n/n8n-nodes-langchain.chainLlm",
+            "type": "n8n-nodes-base.googleGeminiChat",
             "typeVersion": 1,
             "position": [
                 220,
                 0
             ],
             "id": "ai-agent",
-            "name": "Alfa Brain (GPT-4o)"
+            "name": "Alfa Brain (Gemini)",
+            "credentials": {
+                "googlePalmApi": {
+                    "id": "YOUR_GOOGLE_GEMINI_CREDENTIAL_ID",
+                    "name": "Google Gemini Account"
+                }
+            }
         },
         {
             "parameters": {
                 "respondWith": "json",
-                "responseBody": "={\n  \"response\": \"{{ $json.text }}\"\n}",
+                "responseBody": "={\n  \"response\": \"{{ $json.output }}\"\n}",
                 "options": {}
             },
             "type": "n8n-nodes-base.respondToWebhook",
@@ -62,14 +60,14 @@
             "main": [
                 [
                     {
-                        "node": "Alfa Brain (GPT-4o)",
+                        "node": "Alfa Brain (Gemini)",
                         "type": "main",
                         "index": 0
                     }
                 ]
             ]
         },
-        "Alfa Brain (GPT-4o)": {
+        "Alfa Brain (Gemini)": {
             "main": [
                 [
                     {
