@@ -84,23 +84,31 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
-            // Placeholder for n8n Webhook
-            // const response = await fetch('YOUR_N8N_WEBHOOK_URL', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ message: text })
-            // });
-            // const data = await response.json();
+            // n8n Webhook Integration
+            const response = await fetch('https://webhook.protocoloalfa.com.br/webhook/alfa-chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text }) // 'message' matches n8n workflow input
+            });
 
-            // Simulation response for now
-            setTimeout(() => {
-                loadingDiv.remove();
-                addMessage("Esta é uma demonstração. Em breve estarei conectado ao seu cérebro de IA no n8n para responder com dados reais da sua agência!");
-            }, 1500);
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+
+            // Remove loading animation
+            loadingDiv.remove();
+
+            // Add AI Response (assuming n8n returns { response: "text" })
+            if (data && data.response) {
+                addMessage(data.response);
+            } else {
+                addMessage("Desculpe, recebi uma resposta vazia do servidor.");
+            }
 
         } catch (error) {
+            console.error('Error:', error);
             loadingDiv.remove();
-            addMessage("Desculpe, tive um erro de conexão momentâneo.");
+            addMessage("Desculpe, estou com dificuldade de conexão no momento. Tente novamente mais tarde.");
         }
     }
 
