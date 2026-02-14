@@ -37,6 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (demoTrigger) demoTrigger.addEventListener('click', toggleWidget);
     if (widgetClose) widgetClose.addEventListener('click', toggleWidget);
 
+    // Mobile Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
     // Chat functionality
     function addMessage(text, isUser = false) {
         const messageDiv = document.createElement('div');

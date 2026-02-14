@@ -296,6 +296,7 @@ img {
 .gradient-text {
     background: linear-gradient(135deg, var(--primary) 0%, #ff9f43 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
 }
@@ -347,12 +348,16 @@ img {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    divide-x: 1px solid var(--border);
 }
 
 .stat-card {
     padding: 3rem 1rem;
     text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.stat-card:last-child {
+    border-right: none;
 }
 
 .stat-value {
@@ -362,6 +367,7 @@ img {
     margin-bottom: 0.5rem;
     background: linear-gradient(to bottom, #fff, #888);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -511,6 +517,7 @@ section {
     margin-bottom: 1rem;
     background: linear-gradient(to right, #fff, #ccc);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -836,8 +843,15 @@ section {
 
     .stats-grid {
         grid-template-columns: 1fr;
-        divide-x: none;
-        divide-y: 1px solid var(--border);
+    }
+
+    .stat-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat-card:last-child {
+        border-bottom: none;
     }
 
     .footer-grid {
