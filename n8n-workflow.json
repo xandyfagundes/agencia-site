@@ -1,0 +1,84 @@
+{
+    "name": "Alfa AI Receptionist",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "alfa-chat",
+                "responseMode": "lastNode",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+                0,
+                0
+            ],
+            "id": "webhook-trigger",
+            "name": "Chat Webhook"
+        },
+        {
+            "parameters": {
+                "model": "gpt-4o",
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "Você é a Alfa IA, a assistente virtual da Alfa Empreendimentos Digitais. Sua missão é agir como uma consultora de crescimento sênior.\n\n**Sobre a Alfa:**\nSomos uma agência de Automação e IA focada em ROI (Retorno sobre Investimento). Não vendemos apenas sites ou chatbots; vendemos máquinas de vendas e eficiência operacional.\n\n**O que oferecemos:**\n1.  **SDR AI (Vendas):** Agentes que prospectam e qualificam leads 24/7.\n2.  **Enriquecimento de Dados:** Buscamos dados externos para criar abordagens hiper-personalizadas.\n3.  **Automação de Ops:** Conectamos CRM, Financeiro e Marketing para eliminar trabalho manual.\n\n**Seu Tom de Voz:**\nProfissional, direto, autoridade no assunto, mas acessível. Use emojis com moderação. Foque sempre no benefício financeiro (economia de tempo, aumento de receita).\n\n**Interação:**\nO usuário enviará uma mensagem. Responda de forma concisa (máximo 3 parágrafos). Sempre tente direcionar para o agendamento de uma consultoria gratuita se o lead parecer qualificado.\n\n**Link de Agendamento:** https://wa.me/5555997130117"
+                    },
+                    {
+                        "role": "user",
+                        "content": "={{ $json.message }}"
+                    }
+                ],
+                "options": {}
+            },
+            "type": "@n8n/n8n-nodes-langchain.chainLlm",
+            "typeVersion": 1,
+            "position": [
+                220,
+                0
+            ],
+            "id": "ai-agent",
+            "name": "Alfa Brain (GPT-4o)"
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={\n  \"response\": \"{{ $json.text }}\"\n}",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                440,
+                0
+            ],
+            "id": "webhook-response",
+            "name": "Respond to Chat"
+        }
+    ],
+    "connections": {
+        "Chat Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Alfa Brain (GPT-4o)",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Alfa Brain (GPT-4o)": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Chat",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
