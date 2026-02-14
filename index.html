@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfa Empreendimentos Digitais | Soluções Digitais Inovadoras</title>
-    <meta name="description" content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
+    <meta name="description"
+        content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
     <meta name="author" content="Alfa Empreendimentos Digitais">
-    
+
     <meta property="og:title" content="Alfa Empreendimentos Digitais | Soluções Digitais Inovadoras">
-    <meta property="og:description" content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
+    <meta property="og:description"
+        content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
     <meta property="og:type" content="website">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="alfa-logo.png">
 
     <style>
         a.btn {
-            text-decoration: none; /* Remove sublinhado de link */
-            display: inline-flex;  /* Garante comportamento de caixa flexível */
-            align-items: center;   /* Centraliza verticalmente */
-            justify-content: center; /* Centraliza horizontalmente */
+            text-decoration: none;
+            /* Remove sublinhado de link */
+            display: inline-flex;
+            /* Garante comportamento de caixa flexível */
+            align-items: center;
+            /* Centraliza verticalmente */
+            justify-content: center;
+            /* Centraliza horizontalmente */
             cursor: pointer;
         }
+
         /* Garante que o link do telefone no rodapé não fique azul/roxo padrão */
         .footer-contact a {
             color: inherit;
             text-decoration: none;
         }
+
         .footer-contact a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <header class="header">
         <nav class="container nav">
@@ -39,7 +49,7 @@
                 <img src="alfa-logo.png" alt="Alfa Logo" class="logo-img">
                 <span class="logo-text">Alfa Empreendimentos Digitais</span>
             </div>
-            
+
             <div class="nav-menu">
                 <a href="#inicio" class="nav-link">Início</a>
                 <a href="#metodo" class="nav-link">O Método</a>
@@ -47,7 +57,25 @@
                 <a href="#resultados" class="nav-link">Resultados</a>
             </div>
 
-            <a href="https://wa.me/5555997130117?text=Olá,%20gostaria%20de%20escalar%20meu%20negócio%20com%20IA" target="_blank" class="btn btn-primary">Agendar Consultoria</a>
+            <div class="nav-actions">
+                <a href="https://wa.me/5555997130117?text=Olá,%20gostaria%20de%20escalar%20meu%20negócio%20com%20IA"
+                    target="_blank" class="btn btn-primary btn-desktop">Agendar Consultoria</a>
+
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="#inicio" class="mobile-link">Início</a>
+                <a href="#metodo" class="mobile-link">O Método</a>
+                <a href="#solucoes" class="mobile-link">Soluções</a>
+                <a href="#resultados" class="mobile-link">Resultados</a>
+                <a href="https://wa.me/5555997130117?text=Olá,%20gostaria%20de%20escalar%20meu%20negócio%20com%20IA"
+                    target="_blank" class="btn btn-primary btn-mobile">Agendar Consultoria</a>
+            </div>
         </nav>
     </header>
 
@@ -58,27 +86,28 @@
                 <div class="hero-badge">
                     <span class="badge-text">🚀 Parceiro de Crescimento com IA</span>
                 </div>
-                
+
                 <h1 class="hero-title">
                     Sua Empresa Rodando no <br>
                     <span class="gradient-text">Piloto Automático</span>
                 </h1>
-                
+
                 <p class="hero-subtitle">
-                    Transformamos operações manuais em máquinas de vendas e eficiência. 
-                    Implemente <strong>Agentes de IA</strong> que trabalham 24/7 para escalar seu negócio sem aumentar a equipe.
+                    Transformamos operações manuais em máquinas de vendas e eficiência.
+                    Implemente <strong>Agentes de IA</strong> que trabalham 24/7 para escalar seu negócio sem aumentar a
+                    equipe.
                 </p>
 
                 <div class="hero-buttons">
                     <a href="https://wa.me/5555997130117" target="_blank" class="btn btn-primary btn-lg">
                         Quero Escalar Agora
                         <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
                     <button id="demo-trigger" class="btn btn-outline btn-lg">Ver Demo de IA</button>
                 </div>
-                
+
                 <div class="hero-trusted">
                     <p>Tecnologia utilizada por líderes de mercado</p>
                     <div class="trusted-logos">
@@ -130,7 +159,8 @@
                     <div class="feature-number">01</div>
                     <h3 class="feature-title">Diagnóstico Profundo</h3>
                     <p class="feature-description">
-                        Mapeamos seus gargalos operacionais e oportunidades de vendas perdidas onde a IA pode atuar imediatamente.
+                        Mapeamos seus gargalos operacionais e oportunidades de vendas perdidas onde a IA pode atuar
+                        imediatamente.
                     </p>
                 </div>
 
@@ -138,7 +168,8 @@
                     <div class="feature-number">02</div>
                     <h3 class="feature-title">Arquitetura de Dados</h3>
                     <p class="feature-description">
-                        Estruturamos e enriquecemos seus dados (CRM, Leads) para que a IA tenha contexto total do seu negócio.
+                        Estruturamos e enriquecemos seus dados (CRM, Leads) para que a IA tenha contexto total do seu
+                        negócio.
                     </p>
                 </div>
 
@@ -149,12 +180,13 @@
                         Desenvolvemos e integramos Agentes Autônomos (SDRs, Suporte) em semanas, não meses.
                     </p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-number">04</div>
                     <h3 class="feature-title">Otimização Contínua</h3>
                     <p class="feature-description">
-                        Monitoramos a performance dos agentes e ajustamos os modelos para maximizar a conversão constantemente.
+                        Monitoramos a performance dos agentes e ajustamos os modelos para maximizar a conversão
+                        constantemente.
                     </p>
                 </div>
             </div>
@@ -176,37 +208,40 @@
                 <div class="solution-card">
                     <div class="solution-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                         </svg>
                     </div>
                     <h3 class="solution-title">SDR AI (Vendas)</h3>
                     <p class="solution-description">
-                        Agentes que prospectam, qualificam e agendam reuniões automaticamente, nutrindo leads frios até a conversão.
-                    </p>
-                </div>
-                
-                <div class="solution-card">
-                    <div class="solution-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                            <polyline points="10 9 9 9 8 9"/>
-                        </svg>
-                    </div>
-                    <h3 class="solution-title">Enriquecimento de Dados</h3>
-                    <p class="solution-description">
-                        Buscamos dados externos para completar perfis de clientes, permitindo abordagens hiper-personalizadas.
+                        Agentes que prospectam, qualificam e agendam reuniões automaticamente, nutrindo leads frios até
+                        a conversão.
                     </p>
                 </div>
 
                 <div class="solution-card">
                     <div class="solution-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                    </div>
+                    <h3 class="solution-title">Enriquecimento de Dados</h3>
+                    <p class="solution-description">
+                        Buscamos dados externos para completar perfis de clientes, permitindo abordagens
+                        hiper-personalizadas.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                         </svg>
                     </div>
                     <h3 class="solution-title">Automação de Ops</h3>
@@ -223,7 +258,8 @@
             <div class="cta-box">
                 <h2>Pronto para escalar sua operação?</h2>
                 <p>Agende uma consultoria gratuita e descubra onde a IA pode gerar mais valor no seu negócio hoje.</p>
-                <a href="https://wa.me/5555997130117" target="_blank" class="btn btn-primary btn-lg">Falar com Especialista</a>
+                <a href="https://wa.me/5555997130117" target="_blank" class="btn btn-primary btn-lg">Falar com
+                    Especialista</a>
             </div>
         </div>
     </section>
@@ -237,7 +273,8 @@
                         <span class="logo-text">Alfa Empreendimentos Digitais</span>
                     </div>
                     <p class="footer-description">
-                        Sua parceira estratégica em automação e inteligência artificial para negócios de alta performance.
+                        Sua parceira estratégica em automação e inteligência artificial para negócios de alta
+                        performance.
                     </p>
                 </div>
 
@@ -246,14 +283,15 @@
                     <ul class="footer-contact">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                             </svg>
                             contato@protocoloalfa.com.br
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
                             <a href="https://wa.me/5555997130117" target="_blank">(55) 9971-30117</a>
                         </li>
@@ -270,7 +308,7 @@
     <div id="ai-widget" class="ai-widget">
         <button id="ai-widget-trigger" class="ai-widget-trigger">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
             <span class="files-alert">1</span>
         </button>
@@ -294,8 +332,8 @@
                 <input type="text" id="ai-input" placeholder="Digite sua dúvida..." />
                 <button id="ai-send">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="22" y1="2" x2="11" y2="13"/>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
                     </svg>
                 </button>
             </div>
@@ -304,4 +342,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
