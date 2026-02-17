@@ -353,6 +353,25 @@ img {
     transform: scale(1.1);
 }
 
+@media (max-width: 768px) {
+    .trusted-logos {
+        gap: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    .trusted-logos img {
+        height: 28px;
+        max-width: 140px;
+    }
+
+    /* Make the last item (Claude) centered if it's the 5th one */
+    .trusted-logos img:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+}
+
 /* Stats */
 .stats {
     border-top: 1px solid var(--border);
