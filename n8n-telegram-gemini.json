@@ -1,0 +1,98 @@
+{
+    "name": "Telegram Gemini Bot",
+    "nodes": [
+        {
+            "parameters": {
+                "updates": [
+                    "message"
+                ],
+                "additionalFields": {}
+            },
+            "type": "n8n-nodes-base.telegramTrigger",
+            "typeVersion": 1.1,
+            "position": [
+                0,
+                0
+            ],
+            "id": "telegram-trigger",
+            "name": "Telegram Trigger",
+            "webhookId": "4a7f9b2e-1c3d-4e5f-a6g7-8h9i0j1k2l3m",
+            "credentials": {
+                "telegramApi": {
+                    "id": "YOUR_TELEGRAM_CREDENTIAL_ID",
+                    "name": "Telegram Account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "modelId": "gemini-pro",
+                "prompt": "={{ $json.message.text }}",
+                "options": {
+                    "systemInstruction": "Você é um assistente útil e inteligente no Telegram. \nResponda de forma concisa e direta.\nSe o usuário perguntar sobre a ALFA, explique que somos uma agência de automação e IA."
+                }
+            },
+            "type": "n8n-nodes-base.googleGeminiChat",
+            "typeVersion": 1,
+            "position": [
+                220,
+                0
+            ],
+            "id": "gemini-agent",
+            "name": "Gemini Agent",
+            "credentials": {
+                "googlePalmApi": {
+                    "id": "YOUR_GOOGLE_GEMINI_CREDENTIAL_ID",
+                    "name": "Google Gemini Account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "chatId": "={{ $node[\"Telegram Trigger\"].json.message.chat.id }}",
+                "text": "={{ $json.output }}",
+                "additionalFields": {
+                    "parse_mode": "Markdown"
+                }
+            },
+            "type": "n8n-nodes-base.telegram",
+            "typeVersion": 1.2,
+            "position": [
+                440,
+                0
+            ],
+            "id": "telegram-response",
+            "name": "Telegram Response",
+            "credentials": {
+                "telegramApi": {
+                    "id": "YOUR_TELEGRAM_CREDENTIAL_ID",
+                    "name": "Telegram Account"
+                }
+            }
+        }
+    ],
+    "connections": {
+        "Telegram Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "Gemini Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Gemini Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Telegram Response",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

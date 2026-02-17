@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALFA | Soluções Digitais Inovadoras</title>
+    <meta name="description"
+        content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
+    <meta name="author" content="ALFA">
+
+    <meta property="og:title" content="ALFA | Soluções Digitais Inovadoras">
+    <meta property="og:description"
+        content="Transforme seu negócio com soluções digitais estratégicas. Agência digital especializada em inovação e crescimento sustentável.">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="alfa-logo.png">
+
+    <style>
+        a.btn {
+            text-decoration: none;
+            /* Remove sublinhado de link */
+            display: inline-flex;
+            /* Garante comportamento de caixa flexível */
+            align-items: center;
+            /* Centraliza verticalmente */
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            cursor: pointer;
+        }
+
+        /* Garante que o link do telefone no rodapé não fique azul/roxo padrão */
+        .footer-contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SECTION: HEADER -->
+    <!-- SECTION: HERO -->
+    <!-- SECTION: PARTNERS -->
+    <!-- SECTION: STATS -->
+    <!-- SECTION: ABOUT -->
+    <!-- SECTION: SOLUTIONS -->
+    <!-- SECTION: CTA -->
+    <!-- SECTION: FOOTER -->
+
+    <!-- Chat Widget Structure -->
+    <div id="ai-widget" class="ai-widget">
+        <button id="ai-widget-trigger" class="ai-widget-trigger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span class="files-alert">1</span>
+        </button>
+        <div class="ai-widget-window">
+            <div class="ai-widget-header">
+                <div class="ai-header-info">
+                    <span class="ai-avatar">🤖</span>
+                    <div>
+                        <h4>Alfa IA</h4>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                <button id="ai-widget-close" class="close-btn">&times;</button>
+            </div>
+            <div id="ai-chat-messages" class="ai-widget-body">
+                <div class="message ai-message">
+                    Olá! Sou a IA da Alfa. Como posso ajudar a escalar seu negócio hoje?
+                </div>
+            </div>
+            <div class="ai-widget-footer">
+                <input type="text" id="ai-input" placeholder="Digite sua dúvida..." />
+                <button id="ai-send">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
