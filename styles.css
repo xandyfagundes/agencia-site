@@ -336,9 +336,11 @@ img {
     padding: 20px 0;
     white-space: nowrap;
     position: relative;
-    max-width: 800px;
-    /* Adjust as needed */
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .logos-carousel:before,
@@ -363,13 +365,12 @@ img {
 
 .logos-slide {
     display: inline-block;
-    animation: 20s slide infinite linear;
+    animation: slide 20s infinite linear;
 }
 
 .logos-slide img {
     height: 35px;
-    /* Increased size slightly */
-    margin: 0 30px;
+    margin: 0 40px;
     display: inline-block;
     filter: grayscale(100%);
     opacity: 0.7;
@@ -383,12 +384,25 @@ img {
 }
 
 @keyframes slide {
-    from {
+    0% {
         transform: translateX(0);
     }
 
-    to {
+    100% {
         transform: translateX(-100%);
+    }
+}
+
+/* Ensure mobile compatibility */
+@media (max-width: 768px) {
+    .logos-slide img {
+        height: 28px;
+        margin: 0 20px;
+        /* Reduced margin for mobile */
+    }
+
+    .logos-carousel {
+        padding: 15px 0;
     }
 }
 
