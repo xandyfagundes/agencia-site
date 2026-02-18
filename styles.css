@@ -330,47 +330,69 @@ img {
     opacity: 0.7;
 }
 
-.trusted-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-    opacity: 0.7;
+/* Logo Carousel */
+.logos-carousel {
+    overflow: hidden;
+    padding: 20px 0;
+    white-space: nowrap;
+    position: relative;
+    max-width: 800px;
+    /* Adjust as needed */
+    margin: 0 auto;
 }
 
-.trusted-logos img {
-    height: 30px;
-    width: auto;
+.logos-carousel:before,
+.logos-carousel:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.logos-carousel:before {
+    left: 0;
+    background: linear-gradient(to right, var(--background), transparent);
+}
+
+.logos-carousel:after {
+    right: 0;
+    background: linear-gradient(to left, var(--background), transparent);
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 20s slide infinite linear;
+}
+
+.logos-slide img {
+    height: 35px;
+    /* Increased size slightly */
+    margin: 0 30px;
+    display: inline-block;
     filter: grayscale(100%);
+    opacity: 0.7;
     transition: all 0.3s ease;
-    opacity: 0.8;
 }
 
-.trusted-logos img:hover {
+.logos-slide img:hover {
     filter: grayscale(0%);
     opacity: 1;
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-    .trusted-logos {
-        gap: 2rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
+@keyframes slide {
+    from {
+        transform: translateX(0);
     }
 
-    .trusted-logos img {
-        height: 28px;
-        max-width: 140px;
-    }
-
-    /* Make the last item (Claude) centered if it's the 5th one */
-    .trusted-logos img:last-child:nth-child(odd) {
-        grid-column: span 2;
+    to {
+        transform: translateX(-100%);
     }
 }
+
+/* Remove old mobile grid styles as we now use carousel everywhere */
 
 /* Stats */
 .stats {
