@@ -351,6 +351,8 @@ img {
     height: 100%;
     content: "";
     z-index: 2;
+    pointer-events: none;
+    /* Allow clicks to pass through if needed */
 }
 
 .logos-carousel:before {
@@ -365,16 +367,23 @@ img {
 
 .logos-slide {
     display: inline-block;
-    animation: slide 20s infinite linear;
+    animation: logo-scroll 35s infinite linear;
+    /* Slower for better viewing */
+    will-change: transform;
+    /* Hint for browser optimization */
 }
 
 .logos-slide img {
     height: 35px;
+    width: auto;
+    /* Ensure aspect ratio */
     margin: 0 40px;
     display: inline-block;
     filter: grayscale(100%);
     opacity: 0.7;
     transition: all 0.3s ease;
+    max-width: none;
+    /* Prevent global max-width from squishing */
 }
 
 .logos-slide img:hover {
@@ -383,7 +392,7 @@ img {
     transform: scale(1.1);
 }
 
-@keyframes slide {
+@keyframes logo-scroll {
     0% {
         transform: translateX(0);
     }
@@ -396,13 +405,21 @@ img {
 /* Ensure mobile compatibility */
 @media (max-width: 768px) {
     .logos-slide img {
-        height: 28px;
-        margin: 0 20px;
-        /* Reduced margin for mobile */
+        height: 24px !important;
+        /* Force smaller size */
+        margin: 0 15px !important;
     }
 
     .logos-carousel {
         padding: 15px 0;
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
+    .logos-carousel:before,
+    .logos-carousel:after {
+        width: 50px;
+        /* Smaller fade area on mobile */
     }
 }
 
