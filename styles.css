@@ -37,6 +37,11 @@ img {
     display: block;
 }
 
+.container {
+    width: min(100% - 2rem, 1120px);
+    margin-inline: auto;
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -204,6 +209,9 @@ img {
     gap: 0.5rem;
     font-size: 0.95rem;
     text-decoration: none;
+    justify-content: center;
+    min-width: 0;
+    text-align: center;
 }
 
 .btn-primary {
@@ -265,7 +273,7 @@ img {
 
 .hero-inner {
     text-align: center;
-    max-width: 900px;
+    max-width: 780px;
     margin: 0 auto;
     animation: fadeUp 0.8s ease-out;
 }
@@ -286,11 +294,11 @@ img {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.75rem, 6vw, 3.5rem);
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.04em;
+    letter-spacing: 0;
 }
 
 .gradient-text {
@@ -302,10 +310,10 @@ img {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--muted-foreground);
     margin-bottom: 2.5rem;
-    max-width: 700px;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -474,7 +482,7 @@ section {
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
-    max-width: 800px;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -494,7 +502,7 @@ section {
 /* Features Grid (Method) */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
     gap: 2rem;
 }
 
@@ -538,7 +546,7 @@ section {
 /* Solutions Grid */
 .solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 1.5rem;
 }
 
@@ -901,7 +909,46 @@ section {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .container {
+        width: min(100% - 1.5rem, 920px);
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .hero-inner {
+        max-width: 720px;
+    }
+
+    .solution-card {
+        padding: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        width: min(100% - 1.25rem, 640px);
+    }
+
+    section {
+        padding: 4rem 0;
+    }
+
+    .nav {
+        height: 72px;
+        padding: 0.85rem 0;
+    }
+
+    .logo-img {
+        height: 36px;
+    }
+
     .nav-menu {
         display: none;
     }
@@ -915,21 +962,63 @@ section {
     }
 
     .hero {
-        padding: 100px 0 60px;
+        min-height: auto;
+        padding: 108px 0 64px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: clamp(2.1rem, 11vw, 2.7rem);
+        line-height: 1.12;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
     }
 
     .btn-lg {
         width: 100%;
         justify-content: center;
+        padding-inline: 1.25rem;
+        font-size: 1rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-title,
+    .cta-box h2 {
+        font-size: clamp(2rem, 9vw, 2.35rem);
+    }
+
+    .section-subtitle,
+    .cta-box p {
+        font-size: 1rem;
+    }
+
+    .features-grid,
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card,
+    .solution-card {
+        padding: 1.5rem;
     }
 
     .stats-grid {
@@ -943,6 +1032,10 @@ section {
 
     .stat-card:last-child {
         border-bottom: none;
+    }
+
+    .stat-value {
+        font-size: 2.75rem;
     }
 
     .footer-grid {
@@ -961,6 +1054,7 @@ section {
 
     .cta-box {
         padding: 3rem 1.5rem;
+        border-radius: 1.25rem;
     }
 
     .ai-widget {
@@ -976,5 +1070,32 @@ section {
         border-radius: 0;
         position: fixed;
         z-index: 3000;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: min(100% - 1rem, 360px);
+    }
+
+    .hero-badge {
+        max-width: 100%;
+    }
+
+    .badge-text {
+        font-size: 0.8rem;
+    }
+
+    .hero-buttons {
+        max-width: 100%;
+    }
+
+    .logos-slide img {
+        margin-inline: 12px !important;
+    }
+
+    .ai-widget-trigger {
+        width: 56px;
+        height: 56px;
     }
 }
