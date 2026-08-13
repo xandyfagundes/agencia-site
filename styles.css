@@ -433,6 +433,39 @@ img {
 
 /* Remove old mobile grid styles as we now use carousel everywhere */
 
+/* Vision */
+.vision-strip {
+    padding: 0 0 2.5rem;
+    background: var(--background);
+}
+
+.vision-card {
+    width: min(100%, 760px);
+    margin-inline: auto;
+    padding: 1.15rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vision-kicker {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.vision-text {
+    color: var(--muted-foreground);
+    font-size: clamp(0.95rem, 1.4vw, 1.08rem);
+    line-height: 1.55;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
 /* Stats */
 .stats {
     border-top: 1px solid var(--border);
@@ -993,6 +1026,18 @@ section {
         width: 100%;
         justify-content: center;
         padding-inline: 1.25rem;
+        font-size: 1rem;
+    }
+
+    .vision-strip {
+        padding: 0 0 2.5rem;
+    }
+
+    .vision-card {
+        padding: 1.35rem 1.1rem;
+    }
+
+    .vision-text {
         font-size: 1rem;
     }
 
